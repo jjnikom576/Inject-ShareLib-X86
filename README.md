@@ -4,6 +4,7 @@ This guide provides step-by-step instructions for building Android NDK libraries
 ## Prerequisites
 - Android NDK (Download from [Android NDK Archive](https://github.com/android/ndk/wiki/Unsupported-Downloads))
 - Command-line interface (Terminal/CMD)
+- ADB (Android Debug Bridge)
 
 ## Setup Instructions
 
@@ -26,6 +27,38 @@ ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
 ```
 
+## Usage Instructions
+
+### 1. Push Injector
+Upload the executable library to the device:
+```bash
+adb push libs/x86/injector /data/local/tmp/injector
+```
+
+### 2. Set Permissions
+Grant execution permissions to the injector:
+```bash
+adb shell "chmod 755 /data/local/tmp/injector"
+```
+
+### 3. Get Target PID
+Find the process ID of your target application:
+```bash
+adb shell ps
+```
+
+### 4. Inject Library
+Execute the injector with the target PID:
+```bash
+adb shell "/data/local/tmp/injector <pid> /data/local/tmp/libImGUI.so"
+```
+
+### 5. Monitor Logs
+Watch the injection process through ADB logs:
+```bash
+adb logcat -s Injector:*
+```
+
 ## Important Notes
 - This build configuration only supports x86 and x86_64 architectures
 - For additional issues or troubleshooting, please research the error messages or create an issue in this repository
@@ -38,6 +71,7 @@ ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./
 ## สิ่งที่ต้องมี
 - Android NDK (ดาวน์โหลดจาก [Android NDK Archive](https://github.com/android/ndk/wiki/Unsupported-Downloads))
 - Command-line interface (Terminal/CMD)
+- ADB (Android Debug Bridge)
 
 ## ขั้นตอนการติดตั้ง
 
@@ -58,6 +92,38 @@ ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./
 #### Build ไลบรารี
 ```bash
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
+```
+
+## วิธีการใช้งาน
+
+### 1. อัพโหลด Injector
+อัพโหลดไลบรารีที่ compile แล้วไปยังอุปกรณ์:
+```bash
+adb push libs/x86/injector /data/local/tmp/injector
+```
+
+### 2. ตั้งค่าสิทธิ์การเข้าถึง
+กำหนดสิทธิ์การเข้าถึงให้กับ injector:
+```bash
+adb shell "chmod 755 /data/local/tmp/injector"
+```
+
+### 3. ค้นหา PID เป้าหมาย
+ค้นหารหัสกระบวนการ (PID) ของแอปพลิเคชันเป้าหมาย:
+```bash
+adb shell ps
+```
+
+### 4. ทำการ Inject ไลบรารี
+รันคำสั่ง inject พร้อมระบุ PID เป้าหมาย:
+```bash
+adb shell "/data/local/tmp/injector <pid> /data/local/tmp/libImGUI.so"
+```
+
+### 5. ตรวจสอบบันทึก
+ดูบันทึกการทำงานผ่าน ADB logs:
+```bash
+adb logcat -s Injector:*
 ```
 
 ## หมายเหตุสำคัญ
