@@ -61,7 +61,7 @@ adb logcat -s Injector:*
 ```
 
 ## Important Notes
-- This build configuration only supports x86 and x86_64 architectures
+- This build configuration only supports x86 architectures
 - For additional issues or troubleshooting, please research the error messages or create an issue in this repository
 
 ---
@@ -129,5 +129,5 @@ adb logcat -s Injector:*
 ```
 
 ## หมายเหตุสำคัญ
-- การตั้งค่าการ build นี้รองรับเฉพาะสถาปัตยกรรม x86 และ x86_64 เท่านั้น
+- การตั้งค่าการ build นี้รองรับเฉพาะสถาปัตยกรรม x86  เท่านั้น
 - หากพบปัญหาเพิ่มเติม กรุณาค้นคว้าจากข้อความผิดพลาดที่แสดง หรือสร้างปัญหาใหม่ในที่เก็บนี้
