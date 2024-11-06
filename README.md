@@ -3,6 +3,7 @@ This guide provides step-by-step instructions for building Android NDK libraries
 
 ## Prerequisites
 - Android NDK (Download from [Android NDK Archive](https://github.com/android/ndk/wiki/Unsupported-Downloads))
+    - Recommended version: r25c (fastest compilation time)
 - Command-line interface (Terminal/CMD)
 - ADB (Android Debug Bridge)
 
@@ -70,6 +71,7 @@ adb logcat -s Injector:*
 
 ## สิ่งที่ต้องมี
 - Android NDK (ดาวน์โหลดจาก [Android NDK Archive](https://github.com/android/ndk/wiki/Unsupported-Downloads))
+    - แนะนำเวอร์ชัน: r25c (ใช้เวลาคอมไพล์เร็วที่สุด)
 - Command-line interface (Terminal/CMD)
 - ADB (Android Debug Bridge)
 
