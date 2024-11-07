@@ -62,8 +62,9 @@ adb logcat -s Injector:*
 
 ## Important Notes
 - This build configuration only supports x86 architectures
+- For other architectures, we recommend using [AndKittyInjector](https://github.com/MJx0/AndKittyInjector) which provides broader architecture support and is considered the best alternative
 - For additional issues or troubleshooting, please research the error messages or create an issue in this repository
-
+  
 ---
 
 # คำแนะนำการ Build NDK
@@ -129,5 +130,6 @@ adb logcat -s Injector:*
 ```
 
 ## หมายเหตุสำคัญ
-- การตั้งค่าการ build นี้รองรับเฉพาะสถาปัตยกรรม x86  เท่านั้น
+- การตั้งค่าการ build นี้รองรับเฉพาะสถาปัตยกรรม x86 เท่านั้น
+- สำหรับสถาปัตยกรรมอื่นๆ แนะนำให้ใช้ [AndKittyInjector](https://github.com/MJx0/AndKittyInjector) ซึ่งรองรับสถาปัตยกรรมที่หลากหลายกว่าและถือเป็นตัวเลือกที่ดีที่สุด
 - หากพบปัญหาเพิ่มเติม กรุณาค้นคว้าจากข้อความผิดพลาดที่แสดง หรือสร้างปัญหาใหม่ในที่เก็บนี้
